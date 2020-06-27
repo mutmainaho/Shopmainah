@@ -1,0 +1,208 @@
+/*
+ COLORS
+  light purple:#a044a0
+  medium purple:#9c389c
+  dark purple:#aa15aa
+   */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: monospace;
+  font-weight: 400;
+  /* font-size: 16px;*/
+  line-height: 1.7;
+  color: #000;
+  padding: 20px;
+}
+.navigation_checkbox {
+  display: none;
+}
+
+.navigation_button {
+  background-color: #777;
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  top: 60px;
+  right: 60px;
+  border-radius: 50%;
+  z-index: 2000;
+  text-align: center;
+  cursor: pointer;
+}
+
+.navigation_background {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  position: fixed;
+  top: 65px;
+  right: 65px;
+  background-image: radial-gradient(#aa15aa, #a044a0);
+  z-index: 1000;
+  /*transform: scale(80);*/
+  transition: transform 0.8s;
+}
+.navigation_nav {
+  height: 100vh;
+  width: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1500;
+  opacity: 0;
+  width: 0;
+  transition: all 0.8s;
+}
+.navigation_list {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+}
+.navL:link,
+.navL:visited {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 300;
+  padding: 5px 10px;
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    #777 50%
+  );
+
+  background-size: 220%;
+  transition: all, 0.4s;
+}
+.navL_span {
+  display: inline-block;
+}
+.navL:hover,
+.navL:active {
+  background-position: 100%;
+  transform: translateX(10px);
+}
+.navigation_checkbox:checked ~ .navigation_background {
+  transform: scale(80);
+}
+/* functionality*/
+.navigation_checkbox:checked ~ .navigation_nav {
+  width: 100%;
+  opacity: 1;
+  left: 50%;
+}
+/* Icon*/
+.navigation_icon {
+  position: relative;
+  margin-top: 25px;
+}
+.navigation_icon,
+.navigation_icon::before,
+.navigation_icon::after {
+  width: 30px;
+  height: 2px;
+  background-color: #000;
+  display: inline-block;
+}
+.navigation_icon::before,
+.navigation_icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+.navigation_icon::before {
+  top: -8px;
+}
+.navigation_icon::after {
+  top: 8px;
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(160, 68, 160, 0.808),
+      rgba(170, 21, 170, 0.877)
+    ),
+    url(../Shopmainah/mainah/img4.jpg);
+  background-size: cover;
+  background-position: top;
+}
+.logo {
+  height: 35px;
+  margin: 15px;
+}
+.text-box {
+  text-align: center;
+  position: relative;
+  top: 30%;
+}
+.primary-header {
+  color: #000;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 80px;
+}
+.primary-header-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+  animation-name: moveInLeft;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+}
+.primary-header-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
+  animation-name: moveInLeft;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.btn-black {
+  background-color: #000;
+  color: #777;
+}
